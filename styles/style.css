@@ -1,0 +1,29 @@
+.amplift-sign-out {
+  width: 10px;
+}
+
+html {
+  font-family: sans-serif;
+}
+
+body {
+  margin: 0;
+}
+
+.menu {
+  padding: 0.5rem; 
+}
+
+.menu a {
+  text-align: center;
+  color: rgba(0,0,0,0.3);
+  padding: 1rem;
+}
+
+.menu a:hover {
+  color: #5b668e;
+}
+
+.menu a.active {
+  color: #bf250188;
+}
