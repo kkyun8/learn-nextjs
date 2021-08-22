@@ -1,8 +1,14 @@
 import "../styles/style.css" 
 import { Amplify } from 'aws-amplify';
 import { withAuthenticator, AmplifySignOut } from '@aws-amplify/ui-react';
+import { AppProps } from 'next/app';
 import Head from "next/head";
 import Layout from "../components/common/Layout"
+
+interface Props {
+  Component: React.ComponentType<any>;
+  pageProps: React.ReactPropTypes
+}
 
  Amplify.configure({
    Auth: {
@@ -12,7 +18,7 @@ import Layout from "../components/common/Layout"
    }
  });
 
-const App = () => (
+const App: React.FC<Props> = ({ Component, pageProps }) => (
   <>
   <Head>
     <meta
@@ -20,7 +26,9 @@ const App = () => (
       content="width=device-width, initial-scale=1, maximum-scale=1"
     />
     </Head>
-    <Layout />
+    <Layout>
+      <Component {...pageProps} />
+    </Layout>
     <AmplifySignOut className="amplift-sign-out"/>
 </>
 );

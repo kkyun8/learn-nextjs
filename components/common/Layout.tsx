@@ -1,11 +1,13 @@
 import Navbar from "./Navbar";
+interface Props {
+  children?: React.ReactChild;
+}
 
-const Layout = (): JSX.Element  => {
+export default function Layout({ children }:Props) {
   return (
     <div>
-      <Navbar/>
+      <Navbar />
+      {children}
     </div>
   )
 }
-
-export default Layout;
